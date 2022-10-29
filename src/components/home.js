@@ -11,7 +11,7 @@ function Home(props) {
     return () => {};
   }, []);
   return (
-    <div className="container-fluid">
+    <div className="container">
       <div className="row">
         <div className="col-sm-12">
           {<Repo data={props.repoData.repoData} />}

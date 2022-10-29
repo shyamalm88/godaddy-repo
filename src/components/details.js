@@ -22,7 +22,16 @@ function Details({ detailsData }) {
     <div className="mt-2 container">
       <div className="card">
         <div className="card-body">
-          <h5 className="card-title">{detailsData.data.full_name}</h5>
+          <h5 className="card-title">
+            <a
+              href={`${detailsData.data.html_url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa fa-book m-r-5" aria-hidden="true"></i>
+              {detailsData.data.full_name}
+            </a>
+          </h5>
           <p className="card-text">{detailsData.data.description}</p>
           <div className="attributes mb-2">
             <span
