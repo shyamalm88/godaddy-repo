@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { fetchRepoData } from "../actions/repoListAction";
 import Repo from "./repo";
 
-function Home(props) {
+function Home({ repoData }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRepoData());
@@ -13,9 +13,7 @@ function Home(props) {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-12">
-          {<Repo data={props.repoData.repoData} />}
-        </div>
+        <div className="col-sm-12">{<Repo data={repoData.repoData} />}</div>
       </div>
     </div>
   );
