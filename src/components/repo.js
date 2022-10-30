@@ -6,7 +6,9 @@ function Repo({ data }) {
   const [repositoryData, setRepositoryData] = useState([]);
   useEffect(() => {
     setRepositoryData(data);
-    return () => {};
+    return () => {
+      setRepositoryData([]);
+    };
   }, [data]);
 
   function goToDetailsPage(event, data) {

@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchDetailsData } from "../actions/detailsAction";
+import {
+  fetchDetailsData,
+  repoDetailsSuccessAction,
+} from "../actions/detailsAction";
 
 import { connect } from "react-redux";
 
@@ -9,13 +12,14 @@ function Details({ detailsData }) {
   const param = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log(param);
     const urlEndPoints = {
       domain: param.domain,
       url: param.url,
     };
     dispatch(fetchDetailsData(urlEndPoints));
-    return () => {};
+    return () => {
+      dispatch(repoDetailsSuccessAction({}));
+    };
   }, []);
 
   return (
