@@ -77,7 +77,7 @@ function Details({ detailsData }) {
               </span>
             )}
 
-            {detailsData.data.open_issues && (
+            {detailsData.data.open_issues >= 0 && (
               <span
                 className="card-subtitle mb-2 m-r-15 text-muted"
                 title="Open Issues"
